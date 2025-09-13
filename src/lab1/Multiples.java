@@ -3,11 +3,21 @@ package lab1;
 public class Multiples {
 
     public static void main(String[] args) {
-        int count = multiples(1000, 3, 5);  // same as before, but now flexible
+        // call the no-argument version
+        int count = multiples();
         System.out.println(count);
+
+        // also possible to call the general version
+        int count2 = multiples(20, 3, 5);
+        System.out.println(count2);
     }
 
-    // Generalized multiples method
+    // No-argument version → calls the general one with defaults
+    public static int multiples() {
+        return multiples(1000, 3, 5);
+    }
+
+    // Generalized version
     public static int multiples(int n, int a, int b) {
         int number = 1;
         int divisibleNumbers = 0;
